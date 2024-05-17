@@ -1,0 +1,22 @@
+#top{
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.nav{
+    text-decoration: none;
+    margin-left: 0.5em;
+    font-size: 250%;
+    color: greenyellow;
+}
+
+#title{
+    font-size: 750%;
+    color: green;
+}
