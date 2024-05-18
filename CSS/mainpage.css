@@ -1,22 +1,133 @@
-#top{
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #top {
     display: flex;
-    justify-content: space-between;
-}
-
-#navbar{
+    align-items: center;
+  }
+  
+  #title-container {
     display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-}
-
-.nav{
-    text-decoration: none;
-    margin-left: 0.5em;
-    font-size: 250%;
-    color: greenyellow;
-}
-
-#title{
-    font-size: 750%;
+    align-items: center;
+  }
+  
+  #title {
+    font-size: 4rem; /* Adjusted for better readability */
     color: green;
-}
+    margin-left: 1em;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #66ff00;
+    transition: transform 0.3s ease-out;
+    transform: translateX(-100%);
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-bottom: 1em;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    display: block;
+    padding: 1em;
+  }
+  
+  nav a:hover {
+    color: rgb(80, 133, 0);
+  }
+  
+  input#checkbox {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: -50px;
+  }
+  
+  .toggle {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 6px;
+    background-color: green;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-out;
+  }
+  
+  #bar1 {
+    top: 0;
+  }
+  
+  #bar2 {
+    top: 20px;
+  }
+  
+  #bar3 {
+    top: 40px;
+  }
+  
+  input#checkbox:checked + .toggle #bar1 {
+    transform: rotate(45deg) translate(25px, 25px);
+  }
+  
+  input#checkbox:checked + .toggle #bar2 {
+    opacity: 0;
+  }
+  
+  input#checkbox:checked + .toggle #bar3 {
+    transform: rotate(-45deg) translate(25px, -25px);
+  }
+  
+  input#checkbox:checked ~ nav {
+    transform: translateX(0);
+  }
+  
+  input#checkbox:not(:checked) ~ nav {
+    transform: translateX(-100%);
+  }
+  
+  input#checkbox:not(:checked) ~ .toggle #bar1 {
+    transform: translateY(10px);
+  }
+  
+  input#checkbox:not(:checked) ~ .toggle #bar2 {
+    transform: translateY(-10px);
+  }
+  
+  input#checkbox:not(:checked) ~ .toggle #bar3 {
+    transform: translateY(10px);
+  }
+  
+  nav li:first-child {
+    margin-top: 10em;
+  }
