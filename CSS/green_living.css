@@ -5,14 +5,27 @@ body {
     background-size: cover;
   }
 
+#h_title {
+    text-align: center;
+    color: rgb(75, 202, 117);
+    border: 0.3rem, solid, black;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 0.3rem;
+    background-color: rgb(255, 255, 0);
+}
+
 #SharedText {
     border: 0.5rem, solid, black;
     border-radius: 1rem;
     margin-left: 33%;
     margin-right: 33%;
-    margin-bottom: 2%;
+    margin-bottom: 0.2%;
     font-weight: bold;
     background-color: white;
+    height: 65rem;
+    padding-left: 3rem;
+    overflow-y: scroll
 }
 
 #InputText {
