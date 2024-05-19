@@ -21,11 +21,15 @@ body {
     margin-left: 33%;
     margin-right: 33%;
     background-color: gray;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 #EnterText {
     border-radius: 5px;
-    width: 14rem;
+    width: 85%;
 }
 
 #SendText {
