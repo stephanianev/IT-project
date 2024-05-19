@@ -1,5 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    background-image: url(../Images/treeplanet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   #top {
@@ -29,17 +32,17 @@ body {
     transform: translateX(-100%);
   }
   
-  nav ul {
+  .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
   
-  nav li {
+  .navbar li {
     margin-bottom: 1em;
   }
   
-  nav a {
+  .navbar a {
     text-decoration: none;
     color: #ffffff;
     font-size: 2rem;
@@ -47,8 +50,24 @@ body {
     padding: 1em;
   }
   
-  nav a:hover {
-    color: rgb(80, 133, 0);
+  .navbar a:hover {
+    color: rgb(54, 90, 0);
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 5px;
+  }
+
+  .logo-img {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+  }
+
+  .logo-link {
+    text-decoration: none;
   }
   
   input#checkbox {
@@ -129,5 +148,5 @@ body {
   }
   
   nav li:first-child {
-    margin-top: 10em;
+    margin-top: 3em;
   }
