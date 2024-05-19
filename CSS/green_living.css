@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../Images/background_img_eko_living.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+#SharedText {
+    border: 0.5rem, solid, black;
+    border-radius: 1rem;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-bottom: 2%;
+    font-weight: bold;
+    background-color: white;
+}
+
+#InputText {
+    border: 0.5rem, solid, black;
+    border-radius: 1rem;
+    margin-left: 33%;
+    margin-right: 33%;
+    background-color: gray;
+}
+
+#EnterText {
+    border-radius: 5px;
+    width: 14rem;
+}
+
+#SendText {
+    border-radius: 5px;
+}
