@@ -167,11 +167,15 @@ body {
     margin-left: 33%;
     margin-right: 33%;
     margin-bottom: 0.2%;
-    font-weight: bold;
     background-color: white;
     height: 70vh;
     padding-left: 3rem;
     overflow-y: scroll
+}
+
+#SharedText .messageUserName {
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 #InputText {
