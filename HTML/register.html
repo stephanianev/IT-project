@@ -13,50 +13,28 @@
 <body>
     <header>
         <div id="top">
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox" class="toggle">
-                <div class="bars" id="bar1"></div>
-                <div class="bars" id="bar2"></div>
-                <div class="bars" id="bar3"></div>
-            </label>
             <h1 id="title">PlanetPals</h1>
-            <nav>
-                <div class="logo">
-                    <a class="logo-link" href="about_us.html">
-                        <img class="logo-img" src="../Images/logo.png" alt="Our logo">
-                    </a>
-                </div>
-                <div class="navbar">
-                    <ul>
-                        <li><a class="nav" href="eko_cooking.html">Eko Cooking</a></li>
-                        <li><a class="nav" href="eko_activities.html">Eko Activities</a></li>
-                        <li><a class="nav" href="green_living.html">Green Living</a></li>
-                        <li><a class="nav" href="eko_tourism.html">Eko Tourism</a></li>
-                        <li><a class="nav" href="eko_fashion.html">Eko Fashion</a></li>
-                    </ul>
-                </div>
-            </nav>
         </div>
     </header>
     
     <div class="login-box">
  
-        <form>
+        <form id="registerForm" name="registerForm" action="/register" method="post">
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="userName" required="">
             <label>Username</label>
           </div> 
          <div class="user-box">
-            <input type="email" name="" required="">
+            <input type="email" name="email" required="">
             <label>Email</label>
           </div>
           <div class="user-box">
-            <input type="password" name="" required="">
+            <input type="password" name="password" required="">
             <label>Password</label>
           </div>
           <center>
-          <a href="#">
-                 SEND
+          <a href="#" onclick="submitRegisterForm();return false;">
+                 REGISTER
              <span></span>
           </a></center>
           <center>

@@ -7,7 +7,14 @@ function fun1() {
 
 window.onload = function(e) {
     const buttonSend = document.getElementById('SendText');
-    buttonSend.addEventListener('click', fun1);
+    if (buttonSend) {
+        buttonSend.addEventListener('click', fun1);
+    }
+
+    var foo = getParameterByName('error');
+    if (foo && foo.length > 0) {
+        document.getElementById("errorMsg").style.display = "block";
+    }
 }
 
 
@@ -28,3 +35,23 @@ function createMessage(msg) {
 
     sharedText.insertBefore(p, output);
 }
+
+function submitRegisterForm() {
+    const form = document.getElementById("registerForm");
+    form.submit();
+}
+
+function submitLoginForm() {
+    const form = document.getElementById("loginForm");
+    form.submit();
+}
+
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
