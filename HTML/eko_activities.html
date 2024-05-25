@@ -5,10 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eko Activities</title>
     <link rel="icon" type="image/x-icon" href="../Images/logo.png">
-    <link rel="stylesheet" href="../CSS/eko_activities.css">
+    <link rel="stylesheet" href="../CSS/green_living.css">
     <script type="text/javascript" src="../JS/green_living.js" defer></script>
 </head>
 <body>
+    <header>
+        <div id="top">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+            <h1 id="title">PlanetPals</h1>
+            <nav>
+                <div class="logo">
+                    <a class="logo-link" href="about_us.html">
+                        <img class="logo-img" src="../Images/logo.png" alt="Our logo">
+                    </a>
+                </div>
+                <div class="navbar">
+                    <ul>
+                        <li><a class="nav" href="mainpage.html">Home</a></li>
+                        <li><a class="nav" href="eko_cooking.html">Eco Cooking</a></li>
+                        <li><a class="nav" href="eko_activities.html">Eco Activities</a></li>
+                        <li><a class="nav" href="green_living.html">Green Living</a></li>
+                        <li><a class="nav" href="eko_tourism.html">Eco Tourism</a></li>
+                        <li><a class="nav" href="/logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
     
+    <div id="body">
+        <h2 id="h_title">ECO ACTIVITIES</h2>
+        <div id="Form">
+            <div id="SharedText">
+                <p id="output"></p>
+            </div>
+
+            <div id="InputText">
+                <!-- <input type="text", id="EnterText", placeholder="Enter Text", maxlength="200"> -->
+                <textarea id="EnterText", placeholder="Enter Text" rows="3" cols="50"></textarea>
+                <input type="hidden" id="chatType" name="chatType" value="eco_activities">
+                <input type="button", id="SendText", value="Send">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
