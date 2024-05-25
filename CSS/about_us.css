@@ -16,7 +16,7 @@ body {
   }
   
   #title {
-    font-size: 4rem; /* Adjusted for better readability */
+    font-size: 4rem;
     color: green;
     margin-left: 1em;
   }
@@ -104,27 +104,56 @@ body {
   }
   
   #bar1 {
-    top: 0;
+    top: 0px;
   }
   
   #bar2 {
-    top: 20px;
+    top: 40px;
+
   }
   
   #bar3 {
     top: 40px;
   }
   
-  input#checkbox:checked + .toggle #bar1 {
-    transform: rotate(45deg) translate(25px, 25px);
+  #checkbox:checked + .toggle .bars {
+    margin-left: 13px;
   }
   
-  input#checkbox:checked + .toggle #bar2 {
+  #checkbox:checked + .toggle .bars {
+    margin-left: 13px;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: rotate(135deg);
+    margin-left: 0;
+    transform-origin: center;
+    transition-duration: .3s;
     opacity: 0;
   }
   
-  input#checkbox:checked + .toggle #bar3 {
-    transform: rotate(-45deg) translate(25px, -25px);
+  #checkbox:checked + .toggle #bar1 {
+    transform: rotate(45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    transform: rotate(-45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    transform: rotate(45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    transform: rotate(-45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
   }
   
   input#checkbox:checked ~ nav {
@@ -182,7 +211,6 @@ p {
     line-height: 1.6;
 }
 
-/*Team*/
 .team {
     display: flex;
     flex-wrap: wrap;
