@@ -6,7 +6,6 @@
     <title>Green Living</title>
     <link rel="icon" type="image/x-icon" href="../Images/logo.png">
     <link type="text/css" rel="stylesheet" href="../CSS/green_living.css">
-    <script type="text/javascript" src="../JS/green_living.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,6 +17,7 @@
                 <div class="bars" id="bar3"></div>
             </label>
             <h1 id="title">PlanetPals</h1>
+            <h1 class="second_title">Green Living</h1>
             <nav>
                 <div class="logo">
                     <a class="logo-link" href="about_us.html">
@@ -25,7 +25,7 @@
                     </a>
                 </div>
                 <div class="navbar">
-                    <ul>
+                    <ul class="menu">
                         <li><a class="nav" href="mainpage.html">Home</a></li>
                         <li><a class="nav" href="eko_cooking.html">Eko Cooking</a></li>
                         <li><a class="nav" href="eko_activities.html">Eko Activities</a></li>
@@ -37,21 +37,21 @@
             </nav>
         </div>
     </header>
-    
+
     <div id="body">
-        <h2 id="h_title">GREEN LIVING</h2>
         <div id="Form">
             <div id="SharedText">
                 <p id="output"></p>
-            </div>
-
-            <div id="InputText">
-                <!-- <input type="text", id="EnterText", placeholder="Enter Text", maxlength="200"> -->
-                <textarea id="EnterText", placeholder="Enter Text" rows="3" cols="50"></textarea>
-                <input type="hidden" id="chatType" name="chatType" value="green_living">
-                <input type="button", id="SendText", value="Send">
+                <div id="InputText">
+                    <textarea id="EnterText" placeholder="Enter Text" rows="3" cols="50"></textarea>
+                    <input type="hidden" id="chatType" name="chatType" value="green_living">
+                    <input type="button" id="SendText" value="Send">
+                    <input type="button" id="SendText" value="Send" onclick="revealPostsSection()">
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="../JS/green_living.js"></script>
 </body>
 </html>

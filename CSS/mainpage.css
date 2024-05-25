@@ -40,7 +40,6 @@ body {
   
   .navbar li {
     margin-bottom: 1em;
-    display: block;
     height: 100%;
     margin-right: 30px;
     position: relative;
@@ -54,7 +53,8 @@ body {
   .navbar a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 145%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: block;
     padding: 1em;
   }
@@ -150,10 +150,6 @@ body {
   }
   
   #checkbox:checked + .toggle #bar2 {
-    transform: rotate(135deg);
-    margin-left: 0;
-    transform-origin: center;
-    transition-duration: .3s;
     opacity: 0;
   }
   
