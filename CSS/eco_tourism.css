@@ -1,3 +1,10 @@
 body {
   background-image: url(../Images/eco_tourism_img.jpg);
 }
+
+#h_title {
+  text-align: center;
+  color: rgb(147, 156, 143);
+  padding-left: 6%;
+  font-size: 220%;
+}

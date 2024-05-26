@@ -200,9 +200,14 @@ nav li:first-child {
   margin-top: 3em;
 }
 
+#body {
+  display: flex;
+  flex-direction: column;
+}
+
 #h_title {
   text-align: center;
-  color: rgb(68, 152, 96);
+  color: rgb(0, 0, 0);
   padding-left: 11%;
   font-size: 220%;
 }
@@ -231,6 +236,11 @@ nav li:first-child {
   font-weight: bold;
   margin-right: 10px;
   color: #42a500;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
 }
 
 .post-container {
@@ -286,7 +296,7 @@ nav li:first-child {
 
 .post-textarea {
   width: 94.5%;
-  height: 150px;
+  height: 75px;
   padding: 15px;
   border: 1px solid #a8d5ba;
   border-radius: 5px;
