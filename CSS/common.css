@@ -199,3 +199,51 @@ body {
   nav li:first-child {
     margin-top: 3em;
   }
+
+  #h_title {
+    text-align: center;
+    color: rgb(75, 202, 117);
+    border: 0.3rem, solid, black;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 0.3rem;
+    background-color: rgb(255, 255, 0);
+}
+
+#SharedText {
+    border: 0.5rem, solid, black;
+    border-radius: 1rem;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-bottom: 0.2%;
+    background-color: white;
+    height: 70vh;
+    padding-left: 3rem;
+    overflow-y: scroll
+}
+
+#SharedText .messageUserName {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#InputText {
+    border: 0.5rem, solid, black;
+    border-radius: 1rem;
+    margin-left: 33%;
+    margin-right: 33%;
+    background-color: gray;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#EnterText {
+    border-radius: 5px;
+    width: 85%;
+}
+
+#SendText {
+    border-radius: 5px;
+}

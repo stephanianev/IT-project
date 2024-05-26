@@ -1,116 +1,146 @@
-window.onload = function() {
-    revealPostsSection();
-    const chatType = getChatType();
-    const postForm = document.getElementById('PostForm');
-
-    if (postForm) {
-        postForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-            window.location.href = "new_page.html"; // Redirect to new page
-        });
-    }
-
-    if (chatType) {
-        if (chatType === "green_living") {
-            const buttonSend = document.getElementById('SendText');
-            buttonSend.addEventListener('click', postMessage);
-            setInterval(loadMessages, 1000);
-        } else if (chatType === "eco_cooking") {
-            // Add event listeners and intervals for eco_cooking
-        } else if (chatType === "eco_activities") {
-            // Add event listeners and intervals for eco_activities
-        } else if (chatType === "eco_tourism") {
-            // Add event listeners and intervals for eco_tourism
-        }
-    }
-}
-
-function revealPostsSection() {
-    const sharedText = document.getElementById('SharedText');
-    sharedText.style.display = 'block';
-}
-
 function getChatType() {
     const e = document.getElementById('chatType');
     if (e) {
         return e.value;
     } 
+
     return null;
 }
 
-function loadMessages() {
-    // Implement loading messages based on chatType
+window.onload = function(e) {
+    const buttonSend = document.getElementById('SendText');
     const chatType = getChatType();
-    if (chatType === "green_living") {
-        fetch("/load_msg_living")
-            .then(response => response.json())
-            .then(data => {
-                if (data.messages) {
-                    const messages = data.messages;
-                    displayMessages(messages);
-                }
-            })
-            .catch(error => console.error('Error loading messages:', error));
-    } else if (chatType === "eco_cooking") {
-        // Fetch and display messages for eco_cooking
-    } else if (chatType === "eco_activities") {
-        // Fetch and display messages for eco_activities
-    } else if (chatType === "eco_tourism") {
-        // Fetch and display messages for eco_tourism
+
+    if (buttonSend && chatType) {
+        if (chatType == "green_living") {
+            buttonSend.addEventListener('click', post_msg_living);
+            setInterval(load_msg_living, 1000);
+        } else if (chatType == "eco_cooking") {
+            buttonSend.addEventListener('click', post_msg_cooking);
+            setInterval(load_msg_cooking, 1000);
+        } else if (chatType == "eco_activities") {
+            buttonSend.addEventListener('click', post_msg_activities);
+            setInterval(load_msg_activities, 1000);
+        } else if (chatType == "eco_tourism") {
+            buttonSend.addEventListener('click', post_msg_tourism);
+            setInterval(load_msg_tourism, 1000);
+        }
+    }
+
+    var foo = getParameterByName('error');
+    if (foo && foo.length > 0) {
+        const errorElem = document.getElementById("errorMsg");
+        if (errorElem) {
+            errorElem.style.display = "block";
+        }
     }
 }
 
-function displayMessages(messages) {
+
+function createMessage(lines) {
+    const p = document.createElement("p");
+
+    for(i = 0; i < lines.length; i++) {
+        if (i > 0) {
+            p.appendChild(document.createElement("br"));
+        }
+
+        const span = document.createElement("span");
+        span.setAttribute("class", "messageUserName");
+        const text = document.createTextNode(lines[i]["userName"]);
+        span.appendChild(text);
+        p.appendChild(span);
+
+        const content = document.createTextNode(lines[i]["message"]);
+        p.appendChild(content);
+    }
+  
+    const sharedText = document.getElementById('SharedText');
+    sharedText.innerHTML = '<p id="output"></p>';
     const output = document.getElementById('output');
-    output.innerHTML = ""; // Clear previous messages
-    messages.forEach(message => {
-        const p = document.createElement("p");
-        // Create message content
-        p.textContent = message.userName + ": " + message.message;
-        output.appendChild(p);
-    });
+
+    sharedText.insertBefore(p, output);
 }
 
-function postMessage() {
-    const element = document.getElementById('EnterText');
-    const msg = element.value;
-    const chatType = getChatType();
+function submitRegisterForm() {
+    const form = document.getElementById("registerForm");
+    form.submit();
+}
 
-    if (chatType) {
-        let url;
-        switch (chatType) {
-            case "green_living":
-                url = "/add_msg_living";
-                break;
-            case "eco_cooking":
-                url = "/add_msg_cooking";
-                break;
-            case "eco_activities":
-                url = "/add_msg_activities";
-                break;
-            case "eco_tourism":
-                url = "/add_msg_tourism";
-                break;
-            default:
-                break;
-        }
+function submitLoginForm() {
+    const form = document.getElementById("loginForm");
+    form.submit();
+}
 
-        if (url) {
-            fetch(url, {
-                    method: "POST",
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        message: msg
-                    })
-                })
-                .then(response => {
-                    if (response.ok) {
-                        element.value = ""; // Clear input after posting
-                    }
-                })
-                .catch(error => console.error('Error posting message:', error));
-        }
-    }
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+
+function load_msg_living() {
+    load_msg_internal("/load_msg_living");
+}
+
+function load_msg_cooking() {
+    load_msg_internal("/load_msg_cooking");
+}
+
+function load_msg_activities() {
+    load_msg_internal("/load_msg_activities");
+}
+
+function load_msg_tourism() {
+    load_msg_internal("/load_msg_tourism");
+}
+
+function load_msg_internal(url) {
+    fetch(url)
+        .then((response) => {
+            // return response.text();
+            return response.json();
+        })
+        .then((data) => {
+            if (data["messages"]) {
+                const obj = data["messages"];
+                createMessage(obj);
+            }
+        });
+}
+
+function post_msg_living() {
+    post_msg_internal("/add_msg_living")
+}
+
+function post_msg_cooking() {
+    post_msg_internal("/add_msg_cooking")
+}
+
+function post_msg_activities() {
+    post_msg_internal("/add_msg_activities")
+}
+
+function post_msg_tourism() {
+    post_msg_internal("/add_msg_tourism")
+}
+
+function post_msg_internal(url) {
+    element = document.getElementById('EnterText');
+    msg = element.value;
+
+    fetch(url, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({"message": msg})
+    })
+    .then((response) => {
+        element.value = "";
+    })
 }
