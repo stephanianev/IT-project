@@ -15,7 +15,7 @@ body {
   }
   
   #title {
-    font-size: 4rem; /* Adjusted for better readability */
+    font-size: 4rem;
     color: green;
     margin-left: 1em;
   }
@@ -31,7 +31,7 @@ body {
     transform: translateX(-100%);
   }
   
-  .navbar ul {
+  .menu {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -39,12 +39,21 @@ body {
   
   .navbar li {
     margin-bottom: 1em;
+    height: 100%;
+    margin-right: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   
   .navbar a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 145%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: block;
     padding: 1em;
   }
@@ -52,19 +61,35 @@ body {
   .navbar a:hover {
     color: rgb(54, 90, 0);
   }
-
+  
+  .menu li:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    display: block;
+    transition: all 0.5s ease;
+    bottom: 25%;
+  }
+  
+  .menu li:hover::after {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+  
   .logo {
     display: flex;
     flex-direction: row-reverse;
     padding: 5px;
   }
-
+  
   .logo-img {
     width: 150px;
     height: 150px;
     background-color: white;
   }
-
+  
   .logo-link {
     text-decoration: none;
   }
@@ -108,7 +133,7 @@ body {
   
   #bar2 {
     top: 40px;
-
+  
   }
   
   #bar3 {
@@ -124,10 +149,6 @@ body {
   }
   
   #checkbox:checked + .toggle #bar2 {
-    transform: rotate(135deg);
-    margin-left: 0;
-    transform-origin: center;
-    transition-duration: .3s;
     opacity: 0;
   }
   
@@ -178,51 +199,3 @@ body {
   nav li:first-child {
     margin-top: 3em;
   }
-
-#h_title {
-    text-align: center;
-    color: rgb(75, 202, 117);
-    border: 0.3rem, solid, black;
-    margin-left: 40%;
-    margin-right: 40%;
-    border-radius: 0.3rem;
-    background-color: rgb(255, 255, 0);
-}
-
-#SharedText {
-    border: 0.5rem, solid, black;
-    border-radius: 1rem;
-    margin-left: 33%;
-    margin-right: 33%;
-    margin-bottom: 0.2%;
-    background-color: white;
-    height: 70vh;
-    padding-left: 3rem;
-    overflow-y: scroll
-}
-
-#SharedText .messageUserName {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-#InputText {
-    border: 0.5rem, solid, black;
-    border-radius: 1rem;
-    margin-left: 33%;
-    margin-right: 33%;
-    background-color: gray;
-
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-}
-
-#EnterText {
-    border-radius: 5px;
-    width: 85%;
-}
-
-#SendText {
-    border-radius: 5px;
-}
