@@ -19,6 +19,7 @@
                 <div class="bars" id="bar3"></div>
             </label>
             <h1 id="title">PlanetPals</h1>
+            <h2 id="h_title">Eco cooking</h2>
             <nav>
                 <div class="logo">
                     <a class="logo-link" href="mainpage.html">
@@ -40,17 +41,17 @@
     </header>
     
     <div id="body">
-        <h2 id="h_title">ECO COOKING</h2>
         <div id="Form">
             <div id="SharedText">
                 <p id="output"></p>
             </div>
 
-            <div id="InputText">
-                <!-- <input type="text", id="EnterText", placeholder="Enter Text", maxlength="200"> -->
-                <textarea id="EnterText", placeholder="Enter Text" rows="3" cols="50"></textarea>
+            <div class="post-container" id="InputText">
+                <h2>Create a Post</h2>
+                <textarea id="EnterText" class="post-textarea" placeholder="What's on your mind?"></textarea>
                 <input type="hidden" id="chatType" name="chatType" value="eco_cooking">
-                <input type="button", id="SendText", value="Post">
+                <span class="char-count">0 characters</span>
+                <input type="button" class="post-button" id="SendText", value="Post">
             </div>
         </div>
     </div>
