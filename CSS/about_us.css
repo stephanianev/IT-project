@@ -1,6 +1,184 @@
 body {
-    background-image: url(../Images/treeplanet.jpg);
-}
+    font-family: Arial, sans-serif;
+    background-image: url(../Images/background_img_eko_living.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #top {
+    display: flex;
+    align-items: center;
+  }
+  
+  #title-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #title {
+    font-size: 4rem;
+    color: green;
+    margin-left: 1em;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #66ff00;
+    transition: transform 0.3s ease-out;
+    transform: translateX(-100%);
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin-bottom: 1em;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    display: block;
+    padding: 1em;
+  }
+  
+  .navbar a:hover {
+    color: rgb(54, 90, 0);
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 5px;
+  }
+
+  .logo-img {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+  }
+
+  .logo-link {
+    text-decoration: none;
+  }
+  
+  input#checkbox {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: -50px;
+  }
+  
+  .toggle {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 6px;
+    background-color: green;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-out;
+  }
+  
+  #bar1 {
+    top: 0px;
+  }
+  
+  #bar2 {
+    top: 40px;
+
+  }
+  
+  #bar3 {
+    top: 40px;
+  }
+  
+  #checkbox:checked + .toggle .bars {
+    margin-left: 13px;
+  }
+  
+  #checkbox:checked + .toggle .bars {
+    margin-left: 13px;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: rotate(135deg);
+    margin-left: 0;
+    transform-origin: center;
+    transition-duration: .3s;
+    opacity: 0;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    transform: rotate(45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    transform: rotate(-45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    transform: rotate(45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    transform: rotate(-45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+  }
+  
+  input#checkbox:checked ~ nav {
+    transform: translateX(0);
+  }
+  
+  input#checkbox:not(:checked) ~ nav {
+    transform: translateX(-100%);
+  }
+  
+  input#checkbox:not(:checked) ~ .toggle #bar1 {
+    transform: translateY(10px);
+  }
+  
+  input#checkbox:not(:checked) ~ .toggle #bar2 {
+    transform: translateY(-10px);
+  }
+  
+  input#checkbox:not(:checked) ~ .toggle #bar3 {
+    transform: translateY(10px);
+  }
+  
+  nav li:first-child {
+    margin-top: 3em;
+  }
 
 #h_title {
     text-align: center;
@@ -75,4 +253,3 @@ footer {
     bottom: 0;
     font-size: 0.8em; 
 }
-

@@ -26,18 +26,33 @@
                     </a>
                 </div>
                 <div class="navbar">
-                    <ul class="menu">
+                    <ul>
                         <li><a class="nav" href="mainpage.html">Home</a></li>
-                        <li><a class="nav" href="eko_cooking.html">Eko Cooking</a></li>
-                        <li><a class="nav" href="eko_activities.html">Eko Activities</a></li>
+                        <li><a class="nav" href="eko_cooking.html">Eco Cooking</a></li>
+                        <li><a class="nav" href="eko_activities.html">Eco Activities</a></li>
                         <li><a class="nav" href="green_living.html">Green Living</a></li>
-                        <li><a class="nav" href="eko_tourism.html">Eko Tourism</a></li>
+                        <li><a class="nav" href="eko_tourism.html">Eco Tourism</a></li>
                         <li><a class="nav" href="/logout">Log Out</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
+    
+    <div id="body">
+        <h2 id="h_title">ECO TOURISM</h2>
+        <div id="Form">
+            <div id="SharedText">
+                <p id="output"></p>
+            </div>
 
+            <div id="InputText">
+                <!-- <input type="text", id="EnterText", placeholder="Enter Text", maxlength="200"> -->
+                <textarea id="EnterText", placeholder="Enter Text" rows="3" cols="50"></textarea>
+                <input type="hidden" id="chatType" name="chatType" value="eco_tourism">
+                <input type="button", id="SendText", value="Send">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
