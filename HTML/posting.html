@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/posting.css">
+    <script type="text/javascript" src="../JS/posting.js" defer></script>
+    <title>Post</title>
+</head>
+
+<body>
+    <header>
+        <button id="exit-button" onclick="window.location.href='mainpage.html'">Exit</button>
+    </header>
+    <div class="body">
+        <div class="post-container">
+            <h2>Create a Post</h2>
+            <select class="post-select">
+                <option value="eco-cooking">Eco Cooking</option>
+                <option value="eco-activities">Eco Activities</option>
+                <option value="green-living">Green Living</option>
+                <option value="eco-tourism">Eco Tourism</option>
+            </select>
+            <textarea class="post-textarea" placeholder="What's on your mind?"></textarea>
+            <button class="post-button">Post</button>
+            <div class="char-counter">0/280 characters used</div>
+        </div>
+    </div>
+</body>
+</html>
