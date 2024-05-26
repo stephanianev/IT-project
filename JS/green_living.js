@@ -38,28 +38,45 @@ window.onload = function(e) {
 
 
 function createMessage(lines) {
-    const p = document.createElement("p");
+    const box = document.createElement("div");
+    box.setAttribute("class", "messageBox");
 
     for(i = 0; i < lines.length; i++) {
-        if (i > 0) {
-            p.appendChild(document.createElement("br"));
-        }
-
-        const span = document.createElement("span");
-        span.setAttribute("class", "messageUserName");
+        const name = document.createElement("span");
+        name.setAttribute("class", "messageUserName");
         const text = document.createTextNode(lines[i]["userName"]);
-        span.appendChild(text);
-        p.appendChild(span);
+        name.appendChild(text);
 
+        const message = document.createElement("span");
         const content = document.createTextNode(lines[i]["message"]);
-        p.appendChild(content);
+        message.appendChild(content);
+
+        const line = document.createElement("div");
+        line.setAttribute("class", "messageLine");
+        line.appendChild(name);
+        line.appendChild(message);
+
+        box.appendChild(line);
     }
   
     const sharedText = document.getElementById('SharedText');
-    sharedText.innerHTML = '<p id="output"></p>';
-    const output = document.getElementById('output');
+    const linesNumberElement = document.getElementById('linesNumber');
+    linesNumber = 0;
+    if (linesNumberElement) {
+        linesNumber = parseInt(linesNumberElement.innerText);
+    }
 
-    sharedText.insertBefore(p, output);
+    console.log(linesNumber);
+    console.log(lines.length);
+
+    if ( linesNumber != lines.length ) {
+        sharedText.innerHTML = '<p id="output"></p><p id="linesNumber" style="display:none;">' + lines.length + '</p>';
+        const output = document.getElementById('output');
+    
+        sharedText.insertBefore(box, output);
+    
+        sharedText.scrollTop = sharedText.scrollHeight;
+    }
 }
 
 function submitRegisterForm() {

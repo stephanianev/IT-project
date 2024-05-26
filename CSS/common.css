@@ -213,8 +213,8 @@ nav li:first-child {
 #SharedText {
   border: 0.5rem, solid, black;
   border-radius: 1rem;
-  margin-left: 33%;
-  margin-right: 33%;
+  margin-left: 25%;
+  margin-right: 25%;
   margin-bottom: 0.2%;
   background-color: white;
   height: 70vh;
@@ -222,11 +222,20 @@ nav li:first-child {
   overflow-y: scroll
 }
 
-#SharedText .messageUserName {
-font-weight: bold;
-margin-right: 10px;
+#SharedText .messageBox {
+  margin-left: 4%;
 }
 
+#SharedText .messageLine {
+  margin-top: 0.5rem;
+}
+
+#SharedText .messageUserName {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #42a500;
+}
+  
 #InputText {
   border: 0.5rem, solid, black;
   border-radius: 1rem;
@@ -246,4 +255,5 @@ margin-right: 10px;
 
 #SendText {
   border-radius: 5px;
+  background-color: greenyellow;
 }
