@@ -223,11 +223,11 @@ nav li:first-child {
 }
 
 #SharedText .messageBox {
-  margin-left: 4%;
+  margin-left: 1%;
 }
 
 #SharedText .messageLine {
-  margin-top: 0.5rem;
+  margin-top: 1.2rem;
 }
 
 #SharedText .messageUserName {
