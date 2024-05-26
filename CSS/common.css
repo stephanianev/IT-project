@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 #top {
@@ -29,6 +30,7 @@ nav {
   background-color: #66ff00;
   transition: transform 0.3s ease-out;
   transform: translateX(-100%);
+  z-index: 1;
 }
 
 .menu {
