@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/events.css">
+    <script type="text/javascript" src="../JS/events.js" defer></script>
+    <title>Eco Events</title>
+</head>
+<body>
+    <header>
+        <div id="top">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+            <h1 id="title">PlanetPals</h1>
+            <nav>
+                <div class="logo">
+                    <img class="logo-img" src="../Images/logo.png" alt="Our logo">
+                </div>
+                <div class="navbar">
+                    <ul class="menu">
+                        <li><a class="nav" href="mainpage.html">Home</a></li>
+                        <li><a class="nav" href="eco_cooking.html">Eco Cooking</a></li>
+                        <li><a class="nav" href="eco_activities.html">Eco Activities</a></li>
+                        <li><a class="nav" href="green_living.html">Green Living</a></li>
+                        <li><a class="nav" href="eco_tourism.html">Eco Tourism</a></li>
+                        <li><a class="nav" href="/logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <h1 class="title">Top upcoming events</h1>
+    <button onclick="topFunction()" id="buttonTop">↑</button>
+    <fieldset class="field">
+        <legend class="legend" align="center">May 15-16, 2024</legend>
+        <div class="Zone">
+            <div>
+                <h1>RE-Source Southeast Conference 2024</h1>
+            </div>
+            <div>
+                <img src="../Images/RE.jpg" class="image" target="RE_text"
+                    onmousemove="showText(this)" onmouseleave="hideText(this)">
+                <div id="RE_text" class="image-text hidden-text">
+                    This conference in Sofia will focus on renewable energy and storage projects, 
+                    including discussions on funding, grid integration, and innovative energy solutions.
+                </div>
+                <p class="text">To learn more about this event click <a href="https://events.resource-southeast.eu/">this link<a>.</p>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="field">
+        <legend class="legend" align="center">June 5-6, 2024</legend>
+        <div class="Zone">
+            <div>
+                <h1>Green Transition Forum 4.0</h1>
+            </div>
+            <div>
+                <img src="../Images/green transition.png" class="image" target="greentransition_text"
+                    onmousemove="showText(this)" onmouseleave="hideText(this)">
+                <div id="greentransition_text" class="image-text hidden-text">
+                    This forum in Sofia will focus on sustainable development and green technologies, 
+                    featuring discussions on energy transition, climate policies, and innovative green practices.
+                </div>
+                <p class="text">To learn more about this event click <a href="https://greentransition.bg">this link<a>.</p>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="field">
+        <legend class="legend" align="center">September 12, 2024</legend>
+        <div class="Zone">
+            <div>
+                <h1>Forbes ESG Summit 2024</h1>
+            </div>
+            <div>
+                <img src="../Images/Forbes.jpg" class="image" target="Forbes_text"
+                    onmousemove="showText(this)" onmouseleave="hideText(this)">
+                <div id="Forbes_text" class="image-text hidden-text">
+                    The summit in Sofia will bring together business leaders and sustainability experts to 
+                    discuss ESG (Environmental, Social, and Governance) strategies and their impact on business and society.
+                </div>
+                <p class="text">To learn more about this event click <a href="https://forbesbulgaria.com/events/forbes-esg-summit/">this link<a>.</p>
+            </div>
+        </div>
+    </fieldset>
+</body>
+</html>
